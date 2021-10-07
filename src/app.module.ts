@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-
+import { UsersModule } from './app/models/users.module';
 
 @Module({
   imports: [
@@ -15,7 +15,8 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
       database: process.env.TYPE_ORM_DATABASE,
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
 
-    } as TypeOrmModuleOptions)
+    } as TypeOrmModuleOptions),
+    UsersModule
   ],
   controllers: [],
   providers: [],
