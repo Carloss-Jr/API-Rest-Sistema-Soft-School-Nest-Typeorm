@@ -2,6 +2,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { UsersController } from './app/controller/users.controller';
 import { UsersModule } from './app/models/users.module';
 
 @Module({
@@ -19,7 +20,7 @@ import { UsersModule } from './app/models/users.module';
     } as TypeOrmModuleOptions),
     UsersModule,
   ],
-  controllers: [],
+  controllers: [UsersController],
   providers: [],
 })
 export class AppModule { }

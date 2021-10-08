@@ -2,6 +2,7 @@ import {
   BeforeInsert,
   Column,
   CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -35,4 +36,7 @@ export class UserEntity {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAtt: Date;
+
+  @DeleteDateColumn({ name: 'delete_at' })
+  deleteAtt: Date;
 }
