@@ -15,6 +15,7 @@ import { UsersModule } from './app/models/users.module';
       password: process.env.TYPE_ORM_PASSWORD,
       database: process.env.TYPE_ORM_DATABASE,
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
+      synchonize: true,
     } as TypeOrmModuleOptions),
     UsersModule,
   ],
