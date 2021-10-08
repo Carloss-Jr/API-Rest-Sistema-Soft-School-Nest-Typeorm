@@ -1,10 +1,12 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, UseGuards } from '@nestjs/common';
 import { CreateUserDto } from '../Dtos/create.users.dto';
 import { UsersService } from '../service/users.service';
 import { UpdateUserDto } from '../Dtos/update.users.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('api/v1/users')
+@UseGuards(AuthGuard('jwt'))
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
