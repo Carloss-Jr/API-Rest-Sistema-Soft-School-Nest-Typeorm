@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
@@ -14,9 +15,8 @@ import { UsersModule } from './app/models/users.module';
       password: process.env.TYPE_ORM_PASSWORD,
       database: process.env.TYPE_ORM_DATABASE,
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
-
     } as TypeOrmModuleOptions),
-    UsersModule
+    UsersModule,
   ],
   controllers: [],
   providers: [],
