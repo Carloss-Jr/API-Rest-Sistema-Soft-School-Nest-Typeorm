@@ -28,7 +28,7 @@ export class UserEntity {
     this.password = hashSync(this.password, 10);
   }
 
-  @Column()
+  @Column({ default: true })
   provider: boolean;
 
   @CreateDateColumn({ name: 'created_at' })
