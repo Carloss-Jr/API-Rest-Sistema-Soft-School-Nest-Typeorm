@@ -6,11 +6,13 @@ import { UpdateUserDto } from '../Dtos/update.users.dto';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('api/v1/users')
-@UseGuards(AuthGuard('jwt'))
+
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get()
+
   async index() {
     return await this.usersService.findAll();
   }
