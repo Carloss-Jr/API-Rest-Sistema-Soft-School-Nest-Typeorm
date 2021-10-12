@@ -15,6 +15,6 @@ export class CreateUserDto {
     message: MessagesHelper.PASSWORD_VALID,
   })
   password: string;
-  @IsBoolean()
+
   provider: boolean;
 }

@@ -20,7 +20,7 @@ import { AuthModule } from './auth/auth.module';
       username: process.env.TYPEORM_USERNAME,
       password: process.env.TYPEORM_PASSWORD,
       database: process.env.TYPEORM_DATABASE,
-      synchronize: false,
+      synchronize: true,
       extra: {
         ssl: {
           require: true,
